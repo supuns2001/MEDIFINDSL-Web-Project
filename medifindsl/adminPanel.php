@@ -1,0 +1,537 @@
+<?php
+session_start();
+
+require "connection.php";
+
+if (isset($_SESSION["au"])) {
+    $Uemail = $_SESSION["au"]["email"];
+
+    $user_rs = Database::search("SELECT * FROM `user` WHERE `email`='" . $Uemail . "'");
+    $user_data = $user_rs->fetch_assoc();
+
+
+?>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Panel | MEFIFINDSL</title>
+
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="bootstrap.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+        <link rel="icon" href="resource/icon.png" />
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+
+
+
+                            <div class="col-12 col-lg-12">
+                                <div class="row ">
+
+                                    <!-- heder -->
+                                    <div class="col-12 border mt-2 bg-light ">
+                                        <div class="row">
+
+                                            <div class="col-12 col-lg-2 adminhomelogo"></div>
+
+                                            <div class="col-12 col-lg-3 ">
+                                                <p class="fs-5 mb-1 mt-4 font5 fw-bold">Hii <?php echo $user_data["fname"]; ?>. Welcome To Admin Panel </p>
+                                            </div>
+
+
+                                            <div class="col-3 col-lg-3 ">
+                                                <div class="row">
+                                                    <div class="col-4 text-center text-lg-end  mt-3"><i class="bi bi-bell fw-bold fs-4"></i></div>
+                                                    <div class="col-4 text-center text-lg-end mt-3"><i class="bi bi-chat-left-text fw-bold fs-4"></i></div>
+                                                    <div class="col-4 text-center text-lg-end mt-3"><i class="bi bi-calendar-event fw-bold fs-4"></i></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-9 col-lg-4">
+                                                <div class="row">
+                                                    <div class="col-9  text-end">
+                                                        <p class="fs-4 font5 mb-2 mt-3"><?php echo $user_data["fname"] . " " . $user_data["lname"]; ?></p>
+                                                    </div>
+                                                    <div class="col-2 me-2">
+                                                        <?php
+
+                                                        $uimag_rs = Database::search("SELECT * FROM `profile_image` WHERE `user_email`='" . $Uemail . "' ");
+                                                        $user_num = $uimag_rs->num_rows;
+
+
+
+                                                        if ($user_num == 1) {
+                                                            $uimag_data = $uimag_rs->fetch_assoc();
+
+                                                        ?>
+                                                            <img src="<?php echo $uimag_data["path"]; ?>" class="rounded-circle mt-2 mb-1" style="width: 50px; height: 50px;" />
+
+                                                        <?php
+
+
+                                                        } else {
+                                                        ?>
+                                                            <img src="resource/profile_img/newUser.svg" class="rounded-circle mt-2 mb-1" style="width: 50px; height: 50px;" />
+
+                                                        <?php
+
+                                                        }
+
+
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- heder -->
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row">
+
+                                    <div class="col-12 col-lg-2 adminmenuclr mt-4" style="height: 700px;">
+                                        <div class="row ">
+                                            <div class="col-12 selectmenu  mt-5 d-flex align-content-center">
+                                                <a href="adminPanel.php" class="mt-2 mx-3 mt-3 mb-3 fs-6 text-white text-decoration-none   font5"><i class="bi bi-speedometer me-1"></i> DASHBORD</a>
+                                            </div>
+
+                                            <div class="col-12  mt-3 d-flex align-content-center">
+                                                <p class="mt-2 mx-3 mt-3 mb-3 fs-6 text-white  font5"><i class="bi bi-house-heart me-1"></i> HOME</p>
+                                            </div>
+
+                                            <div class="col-12  mt-3 d-flex align-content-center">
+                                                <a href="adminUserProfile.php" class="mt-2 mx-3 mt-3 mb-3 text-decoration-none  fs-6 text-white  font5"><i class="bi bi-person-fill me-1"></i> MY PROFILE</a>
+                                            </div>
+
+                                            <div class="col-12  mt-3 d-flex align-content-center">
+                                                <a href="adminManageProduct.php" class="mt-2 mx-3 mt-3 mb-3 fs-6 text-decoration-none text-white  font5"><i class="bi bi-basket2 me-1"></i> MANAGE PRODUCT</a>
+                                            </div>
+
+                                            <div class="col-12  mt-3 d-flex align-content-center">
+                                                <a href="adminManageUsers.php" class="mt-2 mx-3 mt-3 mb-3 text-decoration-none fs-6 text-white  font5"><i class="bi bi-people-fill me-1"></i> MANAGE USERS</a>
+                                            </div>
+
+                                            <div class="col-12 mt-5">
+                                                <hr class="text-white border-1" />
+                                            </div>
+
+                                            <div class="col-12  mt-3 d-flex align-content-center">
+                                                <a class="mx-3 mt-3 mb-3 fs-6 text-white text-decoration-none font5" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="bi bi-box-arrow-left me-1 "></i> SIGN OUT</a>
+                                            </div>
+
+
+                                            <!-- log out Modal -->
+                                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content modelClr ">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fw-bold fs-4 font5" id="exampleModalLabel">Sign Out to buyer Account</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <p class="fs-4 font5">Are you sure you want Sign Out to Admin Account</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                                            <button type="button" class="btn btn-primary" onclick="adminSignout();"> Yes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- log out Modal -->
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-10 p-lg-4 mt-4 ">
+                                        <div class="row ">
+                                            <div class="col-12 ">
+
+                                                <div class="row gap-5 d-flex justify-content-center">
+                                                    <?php
+
+                                                    $today = date("Y-m-d");
+                                                    $thismonth = date("m");
+                                                    $thisyear = date("Y");
+
+                                                    $a = "0";
+                                                    $b = "0";
+                                                    $c = "0";
+                                                    $e = "0";
+                                                    $f = "0";
+
+
+                                                    $invoice_rs = Database::search("SELECT * FROM `invoice`");
+                                                    $invoice_num = $invoice_rs->num_rows;
+
+                                                    for ($x = 0; $x < $invoice_num; $x++) {
+                                                        $invoice_data = $invoice_rs->fetch_assoc();
+
+                                                        $f = $f + $invoice_data["qty"]; //total qty
+
+                                                        $d = $invoice_data["date"];
+                                                        $splitDate = explode(" ", $d); //separate date from time
+                                                        $pdate = $splitDate[0]; //sold date
+
+                                                        if ($pdate == $today) {
+                                                            $a = $a + $invoice_data["total"];
+                                                            $c = $c + $invoice_data["qty"];
+                                                        }
+
+                                                        $splitMonth = explode("-", $pdate); //separate date as year,month & date
+                                                        $pyear = $splitMonth[0]; //year
+                                                        $pmonth = $splitMonth[1]; //month
+
+                                                        if ($pyear == $thisyear) {
+                                                            if ($pmonth == $thismonth) {
+                                                                $b = $b + $invoice_data["total"];
+                                                                $e = $e + $invoice_data["qty"];
+                                                            }
+                                                        }
+                                                    }
+
+
+                                                    ?>
+
+                                                    <div class="col-8 col-lg-3  adminbox1  rounded rounded-4" style="height: 150px;">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-8 mt-5">
+                                                                <label class="mx-2 fs-2 fw-bold font5 text-white"><?php echo $a; ?>.00</label></br>
+                                                                <label class="mx-2 fs-5 fw-bold font5 text-white">Today Earning</label>
+
+                                                            </div>
+
+                                                            <div class="col-4 d-none d-lg-block mt-5 d-flex justify-content-center">
+                                                                <i class="bi bi-cart-plus divicon  text-start "></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8 col-lg-3  bg-danger adminbox2  rounded rounded-4" style="height: 150px;">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-8 mt-4 mt-lg-5">
+                                                                <label class="mx-2 fs-2 fw-bold font5 text-white"><?php echo $b; ?>.00</label></br>
+                                                                <label class="mx-2 fs-5 fw-bold font5 text-white">Monthly Earning</label>
+
+                                                            </div>
+
+                                                            <div class="col-4 d-none d-lg-block  mt-5 d-flex justify-content-center">
+                                                                <i class="bi bi-bag-check divicon  text-start"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                    $all_user = Database::search("SELECT * FROM `user`  ");
+                                                    $all_user_num = $all_user->num_rows;
+
+
+                                                    ?>
+                                                    <div class="col-8 col-lg-3  bg-danger adminbox3  rounded rounded-4" style="height: 150px;">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-8 mt-5">
+                                                                <label class="mx-2 fs-2 fw-bold font5 text-white"><?php echo ($all_user_num); ?></label></br>
+                                                                <label class="mx-2 fs-5 fw-bold font5 text-white">All Users</label>
+
+                                                            </div>
+
+                                                            <div class="col-4 d-none d-lg-block  mt-5 d-flex justify-content-center">
+                                                                <i class="bi bi-person-circle  divicon  text-start"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class=" col-12">
+                                                <div class="row p-4">
+                                                    <div class="col-12 " style="height: 300px;">
+                                                        <div class="row d-flex justify-content-center gap-5">
+
+                                                            <div class="col-12 col-lg-6  mt-4 mb-1 border-1 rounded-3 shadow">
+                                                                <?php
+
+                                                                ?>
+                                                                <div class="col-12 text-center mb-3 mt-2">
+                                                                    <p class=" fs-4 fw-bold text-decoration-underline font5">Most Selling Products</p>
+                                                                </div>
+
+                                                                <hr />
+
+                                                                <?php
+
+                                                                $freqen_rs = Database::search("SELECT `product_id` , COUNT(`product_id`) AS `most_sell_product`
+                                                                FROM `invoice` WHERE `date` LIKE '%" . $pmonth . "%' GROUP BY `product_id` ORDER BY `most_sell_product` DESC LIMIT 5 ");
+                                                                $freqen_num = $freqen_rs->num_rows;
+                                                                // echo ($freqen_num);
+
+
+
+
+
+
+                                                                ?>
+
+
+                                                                <table class="table mt-3 mb-3">
+                                                                    <thead>
+                                                                        <tr class="text-center">
+                                                                            <th scope="col">#</th>
+                                                                            <th scope="col">First</th>
+                                                                            <th scope="col">Product name</th>
+                                                                            <th scope="col">Sell Qty</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <?php
+
+                                                                        for ($x = 0; $x < $freqen_num; $x++) {
+
+                                                                            $freqen_data = $freqen_rs->fetch_assoc();
+
+                                                                            $prodct_rs = Database::search("SELECT * FROM `product` WHERE `id`='" . $freqen_data["product_id"] . "' ");
+                                                                            $prodct_num = $prodct_rs->num_rows;
+                                                                           
+                                                                            $prodct_data = $prodct_rs->fetch_assoc();
+                                                                        ?>
+                                                                            <tr>
+                                                                                <th scope="row">
+                                                                                    <?php
+                                                                                    if($x == "0"){
+                                                                                        ?>
+                                                                                        <div class="numberOne mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else if($x == "1"){
+                                                                                        ?>
+                                                                                        <div class="numbertwo mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else if($x == "2"){
+                                                                                        ?>
+                                                                                        <div class="numberThree mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else{
+                                                                                        echo $x +1;
+                                                                                    }
+                                                                                   
+                                                                                        
+
+                                                                                   
+                                                                                      ?>
+                                                                                </th>
+                                                                                <td>
+                                                                                    <div class=" mx-lg-3 adminProdctImg">
+                                                                                        <?php
+                                                                                        $imag_rs = Database::search("SELECT * FROM `images` WHERE `product_id`='" . $freqen_data["product_id"] . "'");
+                                                                                        $imag_num = $imag_rs->num_rows;
+                                                                                        $imag_data = $imag_rs->fetch_assoc();
+
+                                                                                        ?>
+                                                                                        <img src="<?php echo $imag_data["code"]; ?>" onclick="block();" style="width: 60px; height: 60px;" />
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td><?php echo $prodct_data["title"]; ?></td>
+                                                                                <?php
+                                                                                // $seller_rs = Database::search("SELECT * FROM `user` WHERE `email`='" . $prodct_data["user_email"] . "' ");
+                                                                                // $seller_data = $seller_rs->fetch_assoc();
+
+                                                                                $qty_rs = Database::search("SELECT SUM(`qty`) AS `qty_total` FROM `invoice` WHERE 
+                                                                                `product_id`='" . $freqen_data["product_id"] . "' AND `date` LIKE '%" . $pmonth . "%'");
+                                                                                $qty_data = $qty_rs->fetch_assoc();
+
+                                                                                ?>
+                                                                                <td><?php echo $qty_data["qty_total"]; ?></td>
+                                                                            </tr>
+                                                                        <?php
+
+
+                                                                        }
+
+
+                                                                        ?>
+
+
+                                                                    </tbody>
+                                                                </table>
+
+                                                            </div>
+
+                                                            <div class="col-12 col-lg-5 mt-4 mb-4 border-1 rounded-3 shadow">
+
+                                                                <div class="col-12 text-center mb-3 mt-2">
+                                                                    <p class=" fs-4 fw-bold text-decoration-underline font5">Best Sellers</p>
+                                                                </div>
+
+                                                                <hr />
+
+                                                                <?php
+
+
+                                                                $freqen_rs2 = Database::search("SELECT `sellers_id` , COUNT(`sellers_id`) AS `most_seller`
+                                                                FROM `invoice` WHERE `date` LIKE '%" . $pmonth . "%' GROUP BY `sellers_id` ORDER BY `most_seller` DESC LIMIT 10 ");
+                                                                $freqen_num2 = $freqen_rs2->num_rows;
+                                                                // echo($freqen_num2);
+
+
+
+
+
+                                                                ?>
+
+                                                                <table class="table mb-3 mt-3">
+                                                                    <thead>  
+                                                                        <tr>
+                                                                            <th scope="col">#</th>
+                                                                            <th scope="col"></th>
+                                                                            <th scope="col">Name</th>
+                                                                            <th scope="col">Contact No.</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <?php
+                                                                        for ($y = 0; $y < $freqen_num2; $y++) {
+
+                                                                            $freqen_data2 = $freqen_rs2->fetch_assoc();
+                                                                            //    echo($freqen_data2["product_id"]);
+
+
+
+                                                                            $seller_rs2 = Database::search("SELECT * FROM `sellers` WHERE `id`='" . $freqen_data2["sellers_id"] . "'");
+                                                                            $seller_num2 = $seller_rs2->num_rows;                                                                            
+                                                                            $seller_data2 = $seller_rs2->fetch_assoc();
+                                                                            
+
+
+                                                                            $mostSeller_rs = Database::search("SELECT * FROM `user` WHERE `email`='" . $seller_data2["user_email"] . "'");
+                                                                            $mostSeller_num = $mostSeller_rs->num_rows;
+                                                                            $mostSeller_data = $mostSeller_rs->fetch_assoc();
+                                                                            // echo ($mostSeller_data["lname"]);
+
+                                                                        ?>
+                                                                            <tr>
+                                                                                <th class="" scope="row">
+                                                                                <?php
+                                                                                    if($y == "0"){
+                                                                                        ?> 
+                                                                                        <div class="numberOne mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else if($y == "1"){
+                                                                                        ?>
+                                                                                        <div class="numbertwo mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else if($y == "2"){
+                                                                                        ?>
+                                                                                        <div class="numberThree mt-3" style="width: 30px; height: 30px;"></div>
+                                                                                        <?php
+                                                                                       
+                                                                                    }else{
+                                                                                        echo $y +1;
+                                                                                    }
+                                                                                   
+                                                                                        
+
+                                                                                   
+                                                                                      ?>
+                                                                                    </th>
+                                                                                <td>
+                                                                                    <?php
+
+                                                                                    $proImage_rs = Database::search("SELECT * FROM `profile_image` WHERE `user_email`='" . $mostSeller_data["email"] . "' ");
+                                                                                    $proImage_num = $proImage_rs->num_rows;
+
+                                                                                    if ($proImage_num == 1) {
+                                                                                        $proImage_data = $proImage_rs->fetch_assoc();
+                                                                                    ?>
+                                                                                        <div class=" " style="width: 50px; height: 50px; border-radius: 80px;">
+                                                                                            <img src="<?php echo $proImage_data["path"]; ?>" style="width:50px; height: 50px; border-radius: 80px;" />
+                                                                                        </div>
+                                                                                    <?php
+                                                                                    } else {
+                                                                                    ?>
+                                                                                        <div class=" " style="width: 50px; height: 50px; border-radius: 80px;">
+                                                                                            <img src="resource/profile_img/newUser.svg" style="width:50px; height: 50px; border-radius: 80px;" />
+                                                                                        </div>
+                                                                                    <?php
+
+                                                                                    }
+
+                                                                                    ?>
+
+                                                                                </td>
+                                                                                <td><?php echo $mostSeller_data["fname"] . " " . $mostSeller_data["lname"]; ?></td>
+                                                                                <td><?php echo $mostSeller_data["mobile"]; ?></td>
+                                                                            </tr>
+                                                                        <?php
+
+                                                                        }
+                                                                        ?>
+
+                                                                        
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="script.js"></script>
+        <script src="bootstrap.bundle.js"></script>
+    </body>
+
+    </html>
+
+<?php
+
+} else {
+    echo ("Something went Wrong Please Sign In");
+}
+
+?>

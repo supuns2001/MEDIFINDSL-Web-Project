@@ -1,0 +1,761 @@
+
+@font-face {
+    font-family: "berkshi";
+    src: url("font/BerkshireSwash-Regular.ttf");
+}
+@font-face {
+    font-family: "merienda";
+    src: url("font/PlayfairDisplay-Bold.ttf");
+}
+@font-face {
+    font-family: "patua";
+    src: url("font/PatuaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "cormor";
+    src: url("font/CormorantSC-Medium.ttf");
+}
+
+@font-face {
+    font-family: "upright";
+    src: url("font/CormorantUpright-Bold.ttf");
+}
+
+@font-face {
+    font-family: "dancing";
+    src: url("font/DancingScript-VariableFont_wght.ttf");
+}
+
+
+
+.font1{
+    font-family:"berkshi" ;
+}
+
+.font2{
+    font-family:"merienda" ;
+}
+
+.font3{
+    font-family:"patua" ;
+}
+
+.font4{
+    font-family:"cormor" ;
+}
+
+.font5{
+    font-family:"upright" ;
+}
+
+.font6{
+    font-family:"dancing" ;
+}
+
+.invoiceFont7{
+    font-family:"merienda" ;
+    font-size: 17px;
+}
+
+.invoiceFont8{
+    font-family:"upright" ;
+    font-size: 25px;
+}
+
+.invoiceFont9{
+    font-family:"upright" ;
+    font-size: 29px;
+}
+
+
+@media only screen and (max-width: 680px) {
+    
+    .invoiceFont7{
+        font-family:"merienda" ;
+        font-size: 12px;
+    }
+
+    .invoiceFont8{
+        font-family:"upright" ;
+        font-size: 17px;
+    }
+
+    .invoiceFont9{
+        font-family:"upright" ;
+        font-size: 20px;
+    }
+}
+
+
+
+
+.main-body{
+    /* background-image: linear-gradient(30deg, rgb(115, 195, 186)  10%, rgb(182, 215, 214) 80%); */
+  
+    background-color:rgb(182, 215, 214);
+    
+}
+
+
+.logo{
+    background-image: url("resource/medifindsl.png");
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat ;
+    transform: scale(1);
+}
+
+.topic1{
+    font-family: "patua";
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.background{
+    background-image: url("resource/drimg2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* .backgroundSecond{
+    background-image: linear-gradient(30deg, rgb(115, 195, 186)  10%, rgb(182, 215, 214) 80%);
+
+} */
+
+.topic2{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main-d{
+    
+    border-width: 0px;
+    border-style: solid;
+    box-shadow: 0px 0px 30px 1px black;
+    border-radius: 20px;
+}
+.main_d2{
+    display: flex;
+    flex-direction: row;
+    justify-content:center ;
+    align-items: center;
+}
+
+
+
+
+.ab{
+    height: 300px;
+    color: rgb(0, 208, 255);
+}
+
+
+.bggg{
+    height: 500px;
+    /* color: rgb(60, 60, 60);
+    color: rgb(0, 125, 150); */
+
+}
+
+
+.proimgdv{
+    height: 250px;
+    background-color: red;
+   
+    
+}
+
+
+.myshadow1{
+    box-shadow: 0px 0px 20px 5px black;
+}
+
+@media only screen and (max-width: 992px) {
+    .myshadow1{
+        box-shadow: 0px 0px 10px 1px black;
+    }
+
+}
+
+.textfeeldclr{
+    background-color: transparent ;
+    height: 45px;
+    border-radius: 8px;
+    /* border-top: none;
+    border-left: none;
+    border-right: none; */
+    border-style: solid;
+    border-bottom: 1px;
+    border-width: 1px;
+    border-color: rgb(121, 121, 121);
+
+}
+
+
+.addproductbg{
+
+    box-shadow: 0px 0px 20px 2px rgb(17, 17, 17);   
+}
+
+/* .addproductbg2{
+
+
+} */
+
+.pm{
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pm1{
+    background-image: url("resource/payment_method/visa_img.png");
+}
+
+.pm2{
+    background-image: url("resource/payment_method/american_express_img.png");
+}
+
+.pm3{
+    background-image: url("resource/payment_method/mastercard_img.png");
+}
+
+.pm4{
+    background-image: url("resource/payment_method/paypal_img.png");
+}
+
+
+
+
+
+
+
+
+
+.textblueclr{
+    color: rgb(13, 13, 149);
+}
+
+
+.cartsearch{
+    border-style: solid;
+    border-width: 3px;
+   
+    width: 400px;
+    border-inline-start: none;
+    border-top: none;
+    border-inline-end: none;
+    outline: none;
+}
+
+
+.cartSmmerybg{
+    background-color: rgb(221, 219, 218);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cardqtytext{
+    width: 100px;
+}
+
+
+.emptyCart{
+    height: 300px;
+
+    background-image: url("resource/emptycart.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+.watchlistbg1{
+   background-color: rgb(244, 240, 240);
+}
+
+
+
+
+.watchlistbtn3{
+    height: 35px;
+   border-style: solid;
+   border-width: 2px;
+   border-color: black;
+   border-radius: 20px;
+   background-color: transparent;
+   color: black;
+   font-weight: bold;
+
+    
+}
+
+
+.watchlistbtn3:hover{
+    border-color: rgb(242, 8, 8);
+    border-width: 3px;
+   border-radius: 20px;
+   background-color: transparent;
+   color: rgb(242, 8, 8);
+   font-size: 20px;
+
+}
+
+
+
+
+.watchlistimg{
+    height: 300px;
+
+    background-image: url("resource/watchlist.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+.myprodctbg{
+    background-color: rgb(242, 242, 242);
+}
+
+.myproductSort{
+    background-color: rgb(138, 169, 191);
+    opacity: 20px;
+}
+
+
+
+.myProductbluebtn{
+    height: 40px;
+    background-color: rgb(19, 135, 170);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    
+
+}
+
+.myProductbluebtn:hover{
+    cursor: pointer;
+    background-color: rgb(16, 116, 146);
+
+}
+
+
+.hicon{
+    font-size: 40px;
+    padding: 10px;
+}
+
+.singleviewImg{
+    transform: scale(0.9);
+   }
+
+
+.singleviewImg:hover{
+ transform: scale(1);
+ transition-duration: 1s;
+}
+
+
+.invoicelogo{
+    background-image: url("resource/medifindsl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(0.7);
+    /* 0.7 */
+}
+
+
+
+.product-qty{
+    width: 105px;
+    height: 45px;
+    padding: 10px;
+}
+
+.qty-buttons{
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    border: solid 1px rgb(72,71,71);
+}
+
+.qty-inc,.qty-dec{
+    width: 100%;
+    height: 50%;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.qty-inc{
+    border-top-right-radius: 5px;
+}
+
+.qty-dec{
+    border-bottom-right-radius: 5px;
+}
+
+
+
+
+.adminbv1{
+    /* background-color: rgb(227, 230, 230); */
+    background-image: url("resource/adminback2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.admindv2{
+   
+    background-color: rgb(227, 230, 230);
+    box-shadow: 30px 30px 50px 1px rgb(0, 0, 0);
+    border-radius: 15px;
+
+
+
+}
+
+
+.admindv3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.adminiconimg{
+    height: 100px;
+    background-image: url("resource/adminicon.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(0.9);
+}
+
+
+
+.admindv4{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.adminlogo{
+    height: 100px;
+    background-image: url("resource/medifindsl.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+.adminhomelogo{
+    height: 80px;
+    background-image: url("resource/medifindsl.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+.selectmenu{
+    background-color:rgb(109, 111, 111);
+    height: 55px;
+}
+
+
+
+.adminmenuclr{
+    background-image: linear-gradient(30deg, rgb(4, 72, 77) 10%, rgb(0, 37, 42) 80%);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.adminbox1{
+    background-image: linear-gradient(30deg, rgb(3, 87, 118)  10%, rgb(11, 219, 234) 80%);
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+
+
+}
+
+.adminbox2{
+    /* background-image: linear-gradient(30deg, rgb(227, 255, 11) 10%, rgb(233, 160, 13) 80%); */
+    background-image: linear-gradient(30deg, rgb(3, 87, 118)  10%, rgb(11, 219, 234) 80%);
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+
+
+
+}
+
+.adminbox3{
+    /* background-image: linear-gradient(30deg, rgb(8, 255, 144) 10%, rgb(1, 215, 227) 80%); */
+    /* background-image: linear-gradient(30deg, rgb(11, 219, 234) 10%, rgb(3, 87, 118) 80%); */
+    background-image: linear-gradient(30deg, rgb(3, 87, 118)  10%, rgb(11, 219, 234) 80%);
+
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+
+
+
+   
+
+}
+
+.divicon{
+    font-size: 50px;
+    color: white;
+}
+
+
+
+.adminInput{
+    width: 60%;
+    border-width: 4px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+
+    
+}
+
+
+.adminProdctImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 80px;
+}
+
+
+.tBlockbtn{
+    height: 40px;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: "upright";
+    font-weight: bold;
+ 
+  }
+
+
+  .tUnblockbtn{
+    height: 40px;
+    background-color: #445271;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: "upright";
+    font-weight: bold;
+  }
+
+  .profilebackimg{
+    background-image: linear-gradient(rgba(0,0,0,.1),rgba(0, 0, 0, 0.5)),url(resource/medifindsl.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+  }
+
+
+ 
+
+  .myprofile{
+    height: 50px;
+  }
+
+  .socailIcon{
+    font-size: 30px;
+    flex: 1;
+    transition: .3s all ease;
+  }
+
+  .socailIcon:hover{
+    font-size: 40px;
+    flex: 2;
+    /* background-color: red; */
+  }
+
+
+  .sellermenuclr{
+    background-image: linear-gradient(30deg, rgb(3, 40, 53)  10%, rgb(4, 113, 121) 80%);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+  }
+
+
+
+  .sellerdashBox{
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background-image: linear-gradient(30deg, rgb(6, 132, 141) 10%, rgb(0, 37, 42) 80%);
+
+        box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+        transition: .3S all ease;
+        flex: 1;
+
+  }
+
+  .sellerdashBox:hover{
+    transform: scale(1.1);
+    /* flex: 1; */
+    cursor: pointer;
+
+  }
+
+
+  .modelClr{
+    background-color: aquamarine;
+  }
+
+
+  .numberOne{
+    background-image: url("resource/oneMedle.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .numbertwo{
+    background-image: url("resource/twoMedle.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .numberThree{
+    background-image: url("resource/threeMedle.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .cartbtncrl{
+    background-image: linear-gradient(60deg, rgb(3, 98, 104) 30%, rgb(0, 37, 42) 80%);
+  }
+
+  .homeSignInBox{
+    background-image: linear-gradient(30deg, rgb(170, 179, 182)  10%, rgb(37, 223, 233)80%);
+
+  }
+
+  .homeSignInBoxbtn{
+    /* background-image: linear-gradient(30deg, rgb(3, 87, 118)  20%, rgb(11, 219, 234) 100%); */
+    background-image: linear-gradient(30deg, rgb(11, 219, 234)  20%,  rgb(3, 87, 118) 100%);
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
+
+  }
+
+
+  .aboutBox1{
+    /* height: 600px; */
+    background-image: url(resource/aboutImg3.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 100px;
+    
+  }
+
+  .aboutBox2{
+    background-color:transparent;
+    padding: 30px;
+    border-radius: 15px;
+    
+    box-shadow: 0px 0px 20px 10px white;
+
+    animation-name: AboutusBox;
+    animation-duration: 4s;
+    animation-delay: 0s;
+
+
+  }
+
+
+  @keyframes AboutusBox
+{
+    0%{
+        margin-left: -1000px;
+        }
+    100%{
+        margin-left: 0px;
+
+        } 
+}
+
+
+  .missionBox{
+    /* height: 300px; */
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: transparent;
+    box-shadow: 0px 0px 20px 1px rgb(17, 139, 184);
+
+
+
+  }
+
+
+  .visionBox{
+    /* height: 400px; */
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: transparent;
+    box-shadow: 0px 0px 20px 1px rgb(17, 139, 184);
+
+  
+
+  }
+
+  .registerCarosalImg1{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 800px; */
+  }
+
+  .rImg1{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .selectMenu:hover{
+    background-color: rgb(188, 188, 188);
+    border-radius: 12px;
+    transform: scale(1.2);
+
+  }
+
+ 

@@ -1,0 +1,393 @@
+
+@font-face {
+    font-family: "j8";
+    src: url("font/j8_r6-DH1bjoc-dwu-reETl4Bno.ttf");
+}
+
+@font-face {
+    font-family: "berkshi";
+    src: url("font/BerkshireSwash-Regular.ttf");
+}
+@font-face {
+    font-family: "merienda";
+    src: url("font/PlayfairDisplay-Bold.ttf");
+}
+@font-face {
+    font-family: "patua";
+    src: url("font/PatuaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "cormor";
+    src: url("font/CormorantSC-Medium.ttf");
+}
+
+@font-face {
+    font-family: "upright";
+    src: url("font/CormorantUpright-Bold.ttf");
+}
+
+
+
+.font1{
+    font-family:"berkshi" ;
+}
+
+.font2{
+    font-family:"merienda" ;
+}
+
+.font3{
+    font-family:"patua" ;
+}
+
+.font4{
+    font-family:"cormor" ;
+}
+
+.font5{
+    font-family:"upright" ;
+}
+
+
+.mainicon{
+    transform: scale(2);
+}
+
+
+
+.hederclr{
+    background-color: rgb(71, 200, 232);
+}
+
+.hbtn{
+    background-color: transparent;
+    /* color: rgb(102, 102, 102); */
+    color: white;
+    height: 50px;
+    font-size: 17;
+}
+
+.hbtn:hover{
+    transition-duration: 1s;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+.optionBtn{
+    background-color: transparent;
+    /* color: rgb(102, 102, 102); */
+    height: 50px;
+    font-size: 17;
+}
+
+.optionBtn:hover{
+    transition-duration: 1s;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+.divb{
+border: 3;
+border-color: black;
+  
+
+}
+.divb:hover{
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-bottom-width: 3px;
+    border-bottom-color: white;
+
+}
+
+
+.signbtn{
+    border-color:rgb(255, 255, 255) ;
+    background-color: transparent;
+    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
+    color: white;
+  
+
+
+}
+
+.signbtn:hover{
+
+    transform: scale(1.1);
+    background-color: rgb(0, 208, 255);
+    box-shadow: 0px 0px 5px 1px white;
+
+    color: black;
+}
+
+
+.homelogodiv{
+    width: 100px;
+    height: 100px;
+   background-image: url("resource/medifindsl.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+}
+
+
+
+
+
+
+.categoraybg{
+    background-color: rgb(182, 179, 179);
+}
+
+
+.font3{
+    font-family: "j8";
+}
+
+
+.footerbg{
+    /* background-color: blue; */
+    background-image: linear-gradient(60deg,rgb(8, 161, 195) 10%,rgb(2, 74, 100) 70%);
+}
+
+
+.caroimg1{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.9)),url(resource/cro5.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.welcome{
+    color: white;
+    margin-top: -100px;
+    font-size: 90px;
+   font-weight: bold;
+   animation-name: welcomeAnimate;
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+
+@keyframes welcomeAnimate
+{
+    0%{
+        margin-top: 0px;
+
+        }
+    100%{
+        margin-top: 100px;
+
+
+        }
+    
+
+    
+}
+
+.welcome2{
+    color: white;
+    /* margin-top: -100px; */
+    font-size: 70px;
+   font-weight: bold;
+   margin-top: 200px;
+   margin-left: 100px;
+   animation-name: welcomeAnimate2;
+    animation-duration: 4s;
+    animation-delay: 0s;
+
+}
+
+@keyframes welcomeAnimate2
+{
+    0%{
+        margin-top: 0px;
+        margin-left: 0px;
+
+        }
+    100%{
+        margin-top: 200px;
+        margin-left: 100px;
+
+
+        }
+    
+
+    
+}
+
+
+.caroimg2{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.9)),url(resource/caro6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.caroimg3{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.9)),url(resource/caro7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+.footercolour1{
+    background-color: rgb(82, 82, 82);
+}
+
+
+
+.swithAccounbtn{
+    background-image: linear-gradient(30deg, rgb(15, 105, 138)  10%, rgb(2, 61, 65) 80%);
+    box-shadow: 3px 3px 5px 1px rgb(0, 0, 0);
+    border: none; 
+}
+
+.swithAccounbtn:hover{
+    color:blue ;
+    background-color: rgb(193, 190, 190);
+    border-color: linear-gradient(30deg, rgb(15, 105, 138)  10%, rgb(2, 61, 65) 80%);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.footervision{
+    
+    color: rgb(255, 255, 255);
+    text-shadow: -10px 0px 10px  rgb(9, 65, 124);
+    text-shadow: 10px 10px 10px rgb(9, 65, 124);
+
+    
+    font-size: 20px;
+}
+
+.socailIcon2{
+    font-size: 30px;
+    flex: 1;
+    transition: .3s all ease;
+}
+.socailIcon2:hover{
+    font-size: 40px;
+    flex: 2;
+    /* background-color: red; */
+  }
+
+
+
+  .carosalBtnDiv1{
+    width: 200px;
+    height: 70px;
+    background-color: rgb(3, 87, 118);
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   color: white;
+    font-size: 30px;
+    font-weight: bold;
+    animation-name: moving;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    box-shadow: 0px 0px 10px 2px rgb(11, 219, 234);
+    margin-left: 560px;
+
+
+}
+
+.carosalBtnDiv1:hover{
+    border-color: aqua;
+    border-width: 3px;
+    background-color: rgb(5, 118, 159);
+
+}
+
+
+@keyframes moving
+{
+    0%{
+         background-color: rgb(11, 219, 234);
+         width: 0px;
+         font-size: 0;
+         margin-left: 0px;
+
+        }
+    100%{
+        background-color:  rgb(3, 87, 118);
+        width: 200px;
+        font-size: 30;
+        margin-left: 560px;
+
+
+        }
+    
+
+    
+}
+
+
+
+.carosalBtnText{
+    font-size: 30;
+    animation-name: textmoving;
+    animation-duration: 4s;
+    animation-delay: 0s;
+
+}
+
+@keyframes textmoving
+{
+    0%{
+         
+         font-size: 0;
+      
+
+        }
+    100%{
+        
+        font-size: 30;
+        
+
+
+        }
+    
+
+    
+}
+
+.prodctShadow{
+    box-shadow: 0px 0px 20px 1px rgb(143, 143, 143);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
